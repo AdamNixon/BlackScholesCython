@@ -1,5 +1,7 @@
 import monte_carlo_wrapper as monte_carlo
 
+# Test file for the Python library.
+
 # Option parameters
 S0 = 100.0  # Initial stock price
 K = 105.0   # Strike price

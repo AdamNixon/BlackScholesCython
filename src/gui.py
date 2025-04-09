@@ -4,6 +4,8 @@ from PySide6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
 from PySide6.QtCore import Qt
 import monte_carlo_wrapper as monte_carlo  # Import the Cython-compiled module
 
+# Example GUI that sits on top of the cython
+
 class OptionPricerWindow(QMainWindow):
     def __init__(self):
         super().__init__()

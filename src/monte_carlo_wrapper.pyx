@@ -1,5 +1,7 @@
 # cython: language_level=3
 
+# File to define the wrapping of the C++ file into Cython
+
 # Declare the C++ function
 cdef extern from "monte_carlo.hpp":
     double monte_carlo_call_option(double S0, double K, double r, double sigma, double T, size_t total_simulations)

@@ -48,15 +48,22 @@ class TableModel(QAbstractTableModel):
 
     @Slot(int, bool)
     def setSelected(self, row, selected):
+        print(f"setSelected called: row={row}, selected={selected}")  # Debug
         if selected:
             self._selected_rows.add(row)
         else:
             self._selected_rows.discard(row)
+        print(f"Selected rows: {self._selected_rows}")  # Debug
         self.selectedItemsChanged.emit()
 
     @Slot(int, result=bool)
     def isSelected(self, row):
         return row in self._selected_rows
+
+    @Slot()
+    def clearSelection(self):
+        self._selected_rows.clear()
+        self.selectedItemsChanged.emit()
 
     @Signal
     def selectedItemsChanged(self):
